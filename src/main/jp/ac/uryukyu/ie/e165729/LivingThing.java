@@ -24,9 +24,8 @@ public class LivingThing {
     public void setDead(boolean dead){this.dead = dead;}
 
     public String getName(){return  name;}
-
-    public  int  getHitPoint(){ return  hitPoint;}
-
+    public  int  getHitPoint(){return  hitPoint;}
+    public int getAttack(){return  attack;}
 
 
     public void attack(LivingThing opponent) {
