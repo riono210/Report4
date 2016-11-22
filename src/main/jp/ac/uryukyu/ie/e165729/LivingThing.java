@@ -21,7 +21,7 @@ public class LivingThing {
         return dead;
     }
 
-       
+
 
     public void attack(LivingThing opponent) {
         if (dead == false) {
