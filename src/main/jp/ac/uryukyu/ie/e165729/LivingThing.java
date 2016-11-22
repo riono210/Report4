@@ -21,20 +21,16 @@ public class LivingThing {
         return dead;
     }
 
-        public void setDead(boolean dead){this.dead = dead;} 
+    public void setDead(boolean dead){this.dead = dead;}
 
-public String getName() {  return name; }
-     
-public void setName(String name){this.name = name;} 
-
-     
-    public  int  getHitPoint(){ return  hitPoint;} 
+    public String getName(){return  name;}
+    public void setName(String name){this.name = name;}
+    public  int  getHitPoint(){ return  hitPoint;}
 
     public void setHitPoint(int hitPoint){this.hitPoint = hitPoint;}
-     
-public  int  getAttack(){ return attack;} 
+    public  int  getAttack(){return attack;}
 
-public void setAttack(int attack){this.attack = attack;}
+    public void setAttack(int attack){this.attack = attack;}
 
     public void attack(LivingThing opponent) {
         if (dead == false) {
