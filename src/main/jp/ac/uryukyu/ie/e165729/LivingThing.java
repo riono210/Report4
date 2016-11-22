@@ -28,14 +28,14 @@ public class LivingThing {
     }
 
     public void setName(String name){this.name = name;}
-    
+
     public  int  getHitPoint(){ return  hitPoint;}
+
+    public void setHitPoint(int hitPoint){this.hitPoint = hitPoint;}
 
     public  int  getAttack(){ return attack;}
 
     public void setAttack(int attack){this.attack = attack;}
-
-    public void setHitpoint(int hitPoint){this.hitPoint = hitPoint;}
 
     public void attack(LivingThing opponent) {
         if (dead == false) {
