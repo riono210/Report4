@@ -28,7 +28,7 @@ public class LivingThing {
     }
 
     public void setName(String name){this.name = name;}
-
+    
     public  int  getHitPoint(){ return  hitPoint;}
 
     public  int  getAttack(){ return attack;}
