@@ -1,15 +1,16 @@
 package jp.ac.uryukyu.ie.e165729;
 
 /**
- * Created by e165729 on 2016/11/20.
+ * Created by e165729 on 2016/11/23.
  */
-public class LivingThing {
+
+public class LivingThing2 {
     private String name;
     private int hitPoint;
     private int attack;
     private boolean dead;
 
-    public LivingThing(String name, int maximumHP, int attack) {
+    public LivingThing2(String name, int maximumHP, int attack) {
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;

@@ -1,9 +1,9 @@
 package jp.ac.uryukyu.ie.e165729;
 
 /**
- * Created by e165729 on 2016/11/17.
+ * Created by e165729 on 2016/11/23.
  */
-public class Main {
+public class Main2 {
     public static void main(String[] args){
         Hero2 hero2 = new Hero2("勇者", 10, 5);
         Enemy2 enemy2 = new Enemy2("スライム", 6, 3);

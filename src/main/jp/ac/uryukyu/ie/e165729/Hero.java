@@ -9,11 +9,10 @@ package jp.ac.uryukyu.ie.e165729;
  * Created by tnal on 2016/11/13.
  */
 
-public class Hero extends LivingThing {
+public class Hero extends LivingThing2 {
 
     public  Hero (String name, int maximumHP, int attack){
         super(name, maximumHP, attack);
-        //System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
 
     }
 }
