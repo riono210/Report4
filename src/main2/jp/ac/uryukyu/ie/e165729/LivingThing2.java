@@ -7,15 +7,18 @@ package jp.ac.uryukyu.ie.e165729;
 public class LivingThing2 {
     private String name;
     private int hitPoint;
+    private int magicPoint;
     private int attack;
     private boolean dead;
 
-    public LivingThing2(String name, int maximumHP, int attack) {
+    public LivingThing2(String name, int maximumHP, int maximumMP, int attack) {
         this.name = name;
         hitPoint = maximumHP;
+        this.magicPoint = maximumMP;
         this.attack = attack;
+
         dead = false;
-        System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
+        System.out.printf("%sのHPは%d，MPは%d。攻撃力は%dです。\n", name, maximumHP, magicPoint, attack);
     }
 
     public boolean isDead() {
@@ -50,6 +53,11 @@ public class LivingThing2 {
         this.attack = attack;
     }
 
+    public int getMagicPoint(){return magicPoint;}
+
+    public  void setMagicPoint(int magicPoint){this.magicPoint = magicPoint;}
+
+    
     public void attack(LivingThing2 opponent) {
         if (dead == false) {
             int damage = (int) (Math.random() * attack);
@@ -58,11 +66,29 @@ public class LivingThing2 {
         }
     }
 
+    public  void magic(LivingThing2 opponent){
+        if(dead == false && magicPoint > 0){
+            magicPoint--;
+            int damage = (int)(Math.random() * ((attack + hitPoint) * 0.9));
+            System.out.printf("%sは魔法を唱えた!%sに%dのダメージを与えた!\n",name, opponent.getName(), damage);
+            opponent.wounded(damage);
+        }
+    }
+
     public void wounded(int damage) {
         hitPoint -= damage;
         if (hitPoint < 0) {
             dead = true;
-            System.out.printf("%sは道半ばで力尽きてしまった。\n", name);
+            System.out.printf("%sは倒れた。\n", name);
         }
     }
+
+    public void escape(){
+        this.dead = true;
+        System.out.printf("%sは逃げ出した!\n", name);
+    }
+
+
+
+
 }

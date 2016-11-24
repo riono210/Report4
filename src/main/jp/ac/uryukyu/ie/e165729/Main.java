@@ -5,17 +5,17 @@ package jp.ac.uryukyu.ie.e165729;
  */
 public class Main {
     public static void main(String[] args){
-        Hero2 hero2 = new Hero2("勇者", 10, 5);
-        Enemy2 enemy2 = new Enemy2("スライム", 6, 3);
+        Hero hero = new Hero("勇者", 10, 5);
+        Enemy enemy = new Enemy("スライム", 6, 3);
 
-        System.out.printf("%s vs. %s\n", hero2.getName(), enemy2.getName());
+        System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
 
         int turn = 0;
-        while( hero2.isDead() == false && enemy2.isDead() == false ){
+        while( hero.isDead() == false && enemy.isDead() == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
-            hero2.attack(enemy2);
-            enemy2.attack(hero2);
+            hero.attack(enemy);
+            enemy.attack(hero);
         }
         System.out.println("戦闘終了");
     }
