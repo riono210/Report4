@@ -57,9 +57,9 @@ public class LivingThing2 {
 
     public  void setMagicPoint(int magicPoint){this.magicPoint = magicPoint;}
 
-    
+
     public void attack(LivingThing2 opponent) {
-        if (dead == false) {
+        if (dead == false && opponent.dead == false) {
             int damage = (int) (Math.random() * attack);
             System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
             opponent.wounded(damage);
@@ -67,7 +67,7 @@ public class LivingThing2 {
     }
 
     public  void magic(LivingThing2 opponent){
-        if(dead == false && magicPoint > 0){
+        if(dead == false && opponent.dead == false && magicPoint > 0){
             magicPoint--;
             int damage = (int)(Math.random() * ((attack + hitPoint) * 0.9));
             System.out.printf("%sは魔法を唱えた!%sに%dのダメージを与えた!\n",name, opponent.getName(), damage);
@@ -77,18 +77,18 @@ public class LivingThing2 {
 
     public void wounded(int damage) {
         hitPoint -= damage;
-        if (hitPoint < 0) {
+        if (hitPoint <= 0) {
             dead = true;
             System.out.printf("%sは倒れた。\n", name);
         }
     }
 
-    public void escape(){
-        this.dead = true;
-        System.out.printf("%sは逃げ出した!\n", name);
+    public void escape(LivingThing2 oppoent) {
+        if (oppoent.dead == false) {
+            this.dead = true;
+            System.out.printf("%sは逃げ出した!\n", name);
+        }
     }
-
-
 
 
 }
