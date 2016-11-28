@@ -19,8 +19,8 @@ public class Main2 {
             Scanner com = new Scanner(System.in);
             int fa = com.nextInt();
 
-            int eCom = (int)(Math.random() *3);
-            enemy2.command(hero2, eCom);
+            float eneCom = (float) (Math.random() *10);
+            enemy2.eneCommand(hero2, eneCom);
 
             hero2.command(enemy2, fa);
         }

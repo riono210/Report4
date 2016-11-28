@@ -67,11 +67,15 @@ public class LivingThing2 {
     }
 
     public  void magic(LivingThing2 opponent){
-        if(dead == false && opponent.dead == false && magicPoint > 0){
-            magicPoint--;
-            int damage = (int)(Math.random() * ((attack + hitPoint) * 0.9));
-            System.out.printf("%sは魔法を唱えた!%sに%dのダメージを与えた!\n",name, opponent.getName(), damage);
-            opponent.wounded(damage);
+        if(dead ==  false && opponent.dead == false) {
+            if (magicPoint > 0) {
+                magicPoint--;
+                int damage = (int) (Math.random() * ((attack + hitPoint) * 0.9));
+                System.out.printf("%sは魔法を唱えた!%sに%dのダメージを与えた!\n", name, opponent.getName(), damage);
+                opponent.wounded(damage);
+            } else {
+                System.out.printf("ミス! %sはMPが足りない!\n", name);
+         }
         }
     }
 

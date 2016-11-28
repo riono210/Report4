@@ -5,8 +5,6 @@ package jp.ac.uryukyu.ie.e165729;
  */
 public class ActionDecision extends LivingThing2 {
 
-    private LivingThing2 opponent;
-
     public ActionDecision(String name, int maximumHP, int maximumMP, int attack){
         super(name, maximumHP, maximumMP, attack);
     }
@@ -18,12 +16,27 @@ public class ActionDecision extends LivingThing2 {
 
         }else if(deci == 1){
             magic(opponent);
-        }else {
+
+        }else if (deci == 2){
             escape(opponent);
         }
-
-
     }
+
+    public void eneCommand(LivingThing2 opponent, float deci){
+        if (deci <= 4 ){
+            attack(opponent);
+
+        }else if(deci <= 6 ){
+            magic(opponent);
+
+        }else if (deci <= 8 ){
+            System.out.printf("%sはじっとこちらを見ている。\n",getName());
+
+        }else if (deci <= 10 ){
+            escape(opponent);
+        }
+    }
+
 
 
 }
